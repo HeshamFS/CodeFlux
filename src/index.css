@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fira+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #3b82f6;
+  --primary-blue-hover: #2563eb;
+  --dark-bg-1: #0f172a;
+  --dark-bg-2: #111827;
+  --dark-bg-3: #1e293b;
+  --dark-bg-4: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --border-color: #1e293b;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @apply antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fira Sans', sans-serif;
+  @apply font-medium tracking-tight;
+}
+
+code, pre, .monaco-editor {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-feature-settings: "liga" 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Custom Components */
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-all duration-200 flex items-center gap-2;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow;
+}
+
+.btn-secondary {
+  @apply bg-[#1e293b] hover:bg-[#2d3748] text-white;
+}
+
+.btn-ghost {
+  @apply bg-transparent hover:bg-[#1e293b] text-gray-300;
+}
+
+.card {
+  @apply bg-[#111827] rounded-lg shadow-md overflow-hidden border border-[#1e293b] transition-all duration-200;
+}
+
+.card-header {
+  @apply p-4 border-b border-[#1e293b] flex justify-between items-center;
+}
+
+.card-body {
+  @apply p-4;
+}
+
+.input {
+  @apply bg-[#1e293b] border border-[#2d3748] rounded-md px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scientific/Academic UI Elements */
+.scientific-label {
+  @apply text-xs uppercase tracking-wider text-gray-400 font-medium;
+}
+
+.data-value {
+  @apply font-mono text-sm bg-[#1e293b] px-2 py-1 rounded text-blue-400;
+}
+
+.section-divider {
+  @apply h-px bg-gradient-to-r from-transparent via-[#1e293b] to-transparent my-6;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply relative inline-block;
+}
+
+.tooltip .tooltip-text {
+  @apply invisible absolute z-10 bg-[#0f172a] text-white text-xs rounded py-1 px-2 bottom-full left-1/2 transform -translate-x-1/2 mb-1 whitespace-nowrap opacity-0 transition-opacity duration-200;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.tooltip:hover .tooltip-text {
+  @apply visible opacity-100;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg-3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d3748;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a5568;
+}
