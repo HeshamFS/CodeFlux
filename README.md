@@ -2,6 +2,8 @@
 
 CodeFlux is a modern web application that intelligently converts legacy MPI/OpenMP C++ code into cleaner, more maintainable C++ code using C++17/20/23 Standard Parallel Algorithms and execution policies.
 
+![CodeFlux Web Application](./webapp.png)
+
 ## ✅ Current Features
 
 - **Code Conversion:** Transform OpenMP/MPI code to modern C++ parallelism
